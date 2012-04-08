@@ -1,0 +1,8 @@
+gmu : Gtk Mounter Unmounter
+
+gmu helps you to mount/unmount your image files (.iso for now)
+
+Developed in Vala.
+
+Dependancies :
+	- gtk3
