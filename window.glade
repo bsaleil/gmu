@@ -4,8 +4,9 @@
   <object class="GtkWindow" id="window">
     <property name="can_focus">False</property>
     <property name="border_width">10</property>
-    <property name="title" translatable="yes">Gmu</property>
+    <property name="title" translatable="yes">gmu</property>
     <property name="default_width">400</property>
+    <property name="icon">gmu.svg</property>
     <child>
       <object class="GtkBox" id="box_main">
         <property name="visible">True</property>
