@@ -36,11 +36,11 @@ class Gui
 		// Try to umount
 		if (entry_dst.get_text() != "")
 		{
-			string command = "gksudo \"umount ";
+			string command = "pkexec --user root umount ";
 			string output = "";
 			string error = "";
 			int status;
-			command += entry_dst.get_text() + "\" -D Gmu";
+			command += entry_dst.get_text();
 			
 			try {
 			spawn_command_line_sync(command,out output,out error,out status);
@@ -71,9 +71,9 @@ class Gui
 			string error = "";
 			int status;
 			
-			command += "gksudo \"mount -o loop -t iso9660 ";
+			command += "pkexec --user root mount -o loop -t iso9660 ";
 			command += entry_src.get_text() + " ";
-			command += entry_dst.get_text() + "\" -D Gmu";
+			command += entry_dst.get_text();
 			
 			try {
 			spawn_command_line_sync(command, out output, out error, out status);
@@ -87,6 +87,7 @@ class Gui
 				displayDialog("Image mounted.",Gtk.MessageType.INFO);
 			else
 				displayDialog("Error while mounting.",Gtk.MessageType.ERROR);
+			
 		}
 		// Empty field
 		else
